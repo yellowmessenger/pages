@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Domino’s</title>
+    <meta charset="utf-8">
+    <script src="/pwa/install"></script>
+    <link rel="manifest"
+          href="https://app.yellowmessenger.com/pwa/manifest.json?bot=x1562641985697&name=Domino’s&icon=https://cdn.yellowmessenger.com/p3e9Sq9GWqN51573069791655.png">
+    <link rel="icon" type="image/png" href="https://cdn.yellowmessenger.com/p3e9Sq9GWqN51573069791655.png" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+
+
+<body>
+<script type="text/javascript">
+    window.ymConfig = {
+        bot: 'x1569558732722',
+        pwa: true,
+        handlers : {
+            sendIOSEvent : function(data){
+                try{
+                    window.webkit.messageHandlers.ymHandler.postMessage(data);
+                }catch (e) {}
+            }
+        }
+    };
+    (function () {
+        var w = window, ic = w.YellowMessenger;
+        if ("function" === typeof ic)
+            ic("reattach_activator"), ic("update", ymConfig);
+        else {
+            var d = document, i = function () {
+                i.c(arguments)
+            };
+
+            function l() {
+                var e = d.createElement("script");
+                e.type = "text/javascript", e.async = !0, e.src = "https://app.yellowmessenger.com/widget/mobile.js";
+                var t = d.getElementsByTagName("script")[0];
+                t.parentNode.insertBefore(e, t)
+            }
+
+            i.q = [], i.c = function (e) {
+                i.q.push(e)
+            }, w.YellowMessenger = i, w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1)
+        }
+        if ('serviceWorker' in window.navigator) {
+            window.navigator.serviceWorker.register('https://app.yellowmessenger.com/pwa/service-worker',
+                {
+                    'scope': '/pwa/mobile/x1562641985697'
+                })
+                .then(function (reg) {
+                    console.log("Service worker registered.", reg);
+                }).catch(function (err) {
+                console.log("No it didn't. This happened:", err)
+            });
+        }
+    })();
+</script>
+</body>
+</html>
