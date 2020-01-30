@@ -23,6 +23,9 @@
                 try{
                     window.webkit.messageHandlers.ymHandler.postMessage(data);
                 }catch (e) {}
+                try{
+                    window.YMHandler.receiveMessage(data)
+                }catch (e) {}
             }
         }
     };
