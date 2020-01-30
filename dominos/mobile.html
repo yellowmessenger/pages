@@ -38,7 +38,7 @@
                         window.webkit.messageHandlers.ymHandler.postMessage(data);
                     } catch (e) { }
                     try {
-                        window.YMHandler.receiveMessage("Android")
+                        window.YMHandler.receiveMessage(JSON.stringify(data));
                     } catch (e) { }
                 }
             },
