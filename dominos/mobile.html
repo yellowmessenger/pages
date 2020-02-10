@@ -45,9 +45,9 @@
             payload: payload
         };
         function sendEvent(s){
-            console.log(s);
+            console.log("Message from Android"+s);
              try {
-                        window.YMHandler.receiveMessage(JSON.stringify({code: "Message Received", data: "s"}));
+                    window.YMHandler.receiveMessage(JSON.stringify({code: "Message Received", data: "s"}));
                     } catch (e) { }
         }
         
