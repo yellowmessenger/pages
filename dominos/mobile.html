@@ -44,7 +44,7 @@
             },
             payload: payload
         };
-        function sendEvent(s){
+        function sendEvent(s = "Noooooo"){
             console.log("Message from Android"+s);
              try {
                    window.YMHandler.receiveMessage(JSON.stringify({code: "Message Received", data: s}));
