@@ -46,6 +46,8 @@
         };
         function sendEvent(s = "Noooooo"){
             console.log("Message from Android"+s);
+
+            window.YellowMessenger.sendEvent("products")
              try {
                    window.YMHandler.receiveMessage(JSON.stringify({code: "Message Received", data: s}));
                   } catch (e) { }
@@ -73,6 +75,7 @@
                 i.q = [], i.c = function (e) {
                     i.q.push(e)
                 }, w.YellowMessenger = i, w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1)
+
             }
             if ('serviceWorker' in window.navigator) {
                 window.navigator.serviceWorker.register('https://app.yellowmessenger.com/pwa/service-worker',
