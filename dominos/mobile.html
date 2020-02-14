@@ -44,10 +44,14 @@
             },
             payload: payload
         };
+        
+        function eventHandler(e) {
+  console.log('The event data is: ' + e.detail);
+}
         function sendEvent(s = "Noooooo"){
             console.log("Message from Android"+s);
-
-            window.YellowMessenger.sendEvent("products")
+            var event = new CustomEvent('message', { detail: s });
+            
              try {
                    window.YMHandler.receiveMessage(JSON.stringify({code: "Message Received", data: s}));
                   } catch (e) { }
