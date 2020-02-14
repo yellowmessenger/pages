@@ -44,10 +44,7 @@
             },
             payload: payload
         };
-        
-        function eventHandler(e) {
-  console.log('The event data is: ' + e.detail);
-}
+
         function sendEvent(s = "Noooooo"){
             console.log("Message from Android"+s);
             var event = new CustomEvent('message', { "data": s });
