@@ -45,17 +45,20 @@
             payload: payload
         };
 
-        function sendEvent(s = "Noooooo"){
-            console.log("Message from Android"+s);
-            var event = new CustomEvent('message', { "data": s });
-            window.dispatchEvent(event);
-            
-             try {
-                   window.YMHandler.receiveMessage(JSON.stringify({code: "Message Received", data: s}));
-                  } catch (e) { }
-             try {
-                    window.webkit.messageHandlers.ymHandler.postMessage({code: "Message Received", data: s});
-                    } catch (e) { }
+        function sendEvent(s = "") {
+            console.log("Message from Android" + s);
+            const iframe = document.getElementById('ymIframe');
+            iframe.contentWindow.postMessage(JSON.stringify({
+                    event_code: 'send-voice-text',
+                    data: s
+                }));
+
+            try {
+                window.YMHandler.receiveMessage(JSON.stringify({ code: "Message Received", data: s }));
+            } catch (e) { }
+            try {
+                window.webkit.messageHandlers.ymHandler.postMessage({ code: "Message Received", data: s });
+            } catch (e) { }
         }
         
         (function () {
