@@ -50,7 +50,7 @@
 }
         function sendEvent(s = "Noooooo"){
             console.log("Message from Android"+s);
-            var event = new CustomEvent('message', { detail: s });
+            var event = new CustomEvent('message', { "data": s });
             window.dispatchEvent(event);
             
              try {
