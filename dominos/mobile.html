@@ -47,11 +47,12 @@
 
         function sendEvent(s = "") {
             console.log("Message from Android" + s);
-//             const iframe = document.getElementById('ymIframe');
-//             iframe.contentWindow.postMessage(JSON.stringify({
-//                     event_code: 'send-voice-text',
-//                     data: s
-//                 }));
+            const iframe = document.getElementById('ymIframe');
+            iframe.contentWindow.postMessage(JSON.stringify({
+                    event_code: 'send-voice-text',
+                    data: s
+                }));
+            
 
             try {
                 window.YMHandler.receiveMessage(JSON.stringify({ code: "Message Received", data: s }));
