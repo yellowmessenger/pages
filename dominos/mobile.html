@@ -61,6 +61,22 @@
                 window.webkit.messageHandlers.ymHandler.postMessage({ code: "Message Received", data: s });
             } catch (e) { }
         }
+        function sendEventiOS(s = "") {
+            console.log("Message from Android" + s);
+            alert(s);
+//             const iframe = document.getElementById('ymIframe');
+//             iframe.contentWindow.postMessage(JSON.stringify({
+//                     event_code: 'send-voice-text',
+//                     data: s
+//                 }));
+            
+            try {
+                window.YMHandler.receiveMessage(JSON.stringify({ code: "Message Received", data: s }));
+            } catch (e) { }
+            try {
+                window.webkit.messageHandlers.ymHandler.postMessage({ code: "Message Received", data: s });
+            } catch (e) { }
+        }
         
         (function () {
             var w = window, ic = w.YellowMessenger;
