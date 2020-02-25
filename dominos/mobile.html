@@ -81,14 +81,6 @@
                 i.q = [], i.c = function (e) {
                     i.q.push(e)
                 }, w.YellowMessenger = i, w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1)
-                
-                 try {
-                window.YMHandler.receiveMessage(JSON.stringify({ code: "ready", data: "" }));
-                } catch (e) { }
-                try {
-                window.webkit.messageHandlers.ymHandler.postMessage({ code: "ready", data: "" });
-                } catch (e) { }
-
             }
             if ('serviceWorker' in window.navigator) {
                 window.navigator.serviceWorker.register('https://app.yellowmessenger.com/pwa/service-worker',
