@@ -101,7 +101,14 @@
                         console.log("No it didn't. This happened:", err)
                     });
             }
-        })();
+        })().then((){
+                try {
+                window.YMHandler.receiveMessage(JSON.stringify({ code: "ready", data: "" }));
+                } catch (e) { }
+                try {
+                window.webkit.messageHandlers.ymHandler.postMessage({ code: "ready", data: "" });
+                } catch (e) { }
+                  }) ;
     </script>
 </body>
 
