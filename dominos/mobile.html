@@ -25,10 +25,12 @@
         };
         let payload = getParams(window.location.href)["payload"];
         let botId = getParams(window.location.href)["botId"];
+        let refreshContext = getParams(window.location.href)["refreshContext"];
+
         window.ymConfig = {
             bot: botId || 'x1569558732722',
             pwa: true,
-            refreshContext: false,
+            refreshContext: refreshContext,
             handlers: {
                 sendIOSEvent: function (data) {
                     try {
