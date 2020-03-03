@@ -30,7 +30,7 @@
         window.ymConfig = {
             bot: botId || 'x1569558732722',
             pwa: true,
-            enableHistory: enableHistory,
+            enableHistory: (enableHistory === 'true') ,
             handlers: {
                 sendIOSEvent: function (data) {
                     try {
