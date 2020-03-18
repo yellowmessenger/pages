@@ -26,6 +26,12 @@
         let payload = getParams(window.location.href)["payload"];
         let botId = getParams(window.location.href)["botId"];
         let enableHistory = getParams(window.location.href)["enableHistory"];
+        
+        let payloadJSON = {};
+        try{
+            payloadJSON = JSON.parse(payload);
+        }catch(e){}
+        
 
         window.ymConfig = {
             bot: botId || 'x1569558732722',
@@ -43,6 +49,10 @@
             },
             payload: payload
         };
+        
+        if(payloadJSON.UserId) {
+            window.ymConfig.uid = payloadJSON.UserId;
+        }
 
         function sendEvent(s = "") {
             console.log("Message from Android" + s);
