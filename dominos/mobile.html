@@ -52,7 +52,9 @@
         let payloadJSON = {};
         try{
             payloadJSON = JSON.parse(payload);
-        }catch(e){}
+        }catch(e){
+        console.log(e);
+        }
         
 
         window.ymConfig = {
