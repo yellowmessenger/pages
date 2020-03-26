@@ -70,7 +70,9 @@
                     } catch (e) { }
                 }
             },
-            payload: payload
+            payload: payload,
+            triggerJourneyOnEnableHistory: payloadJSON.JourneySlug ? true: false ,
+            triggerJourney: payloadJSON.JourneySlug
         };
         
         if(payloadJSON.UserId) {
