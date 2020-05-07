@@ -48,6 +48,8 @@
         let payload = getParams(window.location.href)["ym.payload"];
         let botId = getParams(window.location.href)["botId"];
         let enableHistory = getParams(window.location.href)["enableHistory"];
+        let hideTitleBar = getParams(window.location.href)["hideTitleBar"];
+        
         
         let payloadJSON = {};
         try{
@@ -60,6 +62,7 @@
             bot: botId || 'x1569558732722',
             pwa: true,
             enableHistory: (enableHistory === 'true') ,
+            hideTitleBar: (hideTitleBar === 'true'),
             handlers: {
                 sendIOSEvent: function (data) {
                     try {
