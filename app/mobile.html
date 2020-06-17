@@ -68,6 +68,10 @@
                     try {
                         window.YMHandler.receiveMessage(JSON.stringify(data));
                     } catch (e) { }
+                    try {
+                        window.ReactNativeWebView.postMessage(JSON.stringify(data));
+                    } catch (e) { }
+                    
                 }
             },
             payload: payload,
