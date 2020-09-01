@@ -65,6 +65,7 @@
                 sendIOSEvent: function (data) {
                     try {
                         window.webkit.messageHandlers.ymHandler.postMessage(data);
+                        console.log(data);
                     } catch (e) { }
                     try {
                         window.YMHandler.receiveMessage(JSON.stringify(data));
