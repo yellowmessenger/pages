@@ -126,7 +126,9 @@
                 }, w.YellowMessenger = i, w.attachEvent ? w.attachEvent("onload", l) : w.addEventListener("load", l, !1)
             }
             if ('serviceWorker' in window.navigator) {
-                window.navigator.serviceWorker.register('https://app.yellowmessenger.com/pwa/service-worker',
+                
+//                 window.navigator.serviceWorker.register('https://app.yellowmessenger.com/pwa/service-worker',
+                window.navigator.serviceWorker.register('https://yellowmessenger.github.io/pages/app/service-worker',
                     {
                         'scope': '/pwa/mobile/'+botId
                     })
