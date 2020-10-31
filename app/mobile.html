@@ -48,6 +48,8 @@
         let payload = getParams(window.location.href)["ym.payload"];
         let botId = getParams(window.location.href)["botId"];
         let enableHistory = getParams(window.location.href)["enableHistory"];
+        let ymAuthenticationToken = getParams(window.location.href)["ymAuthenticationToken"];
+        
         
         let payloadJSON = {};
         try{
@@ -61,6 +63,7 @@
             pwa: true,
             sdk: true, // Currently only used for analytics
             enableHistory: (enableHistory === 'true') ,
+            ymAuthenticationToken: ymAuthenticationToken,
             handlers: {
                 sendIOSEvent: function (data) {
                  console.log(data);
